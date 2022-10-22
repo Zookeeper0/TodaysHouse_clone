@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Happiness-Sans-Title';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  height: 3000px;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+.inner {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 60px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header{
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #eaedef;
+  z-index: 10;
+  position: fixed;
+}
+header>.inner {
+  height: 80px;
+}
+.inner .main {
+  max-width: 1256px;
+  height: 80px;
   display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
+}
+.inner .main .main__logo{
+  margin-right: 35px;
+  margin-top: 10px;
+}
+
+.inner .main .main__menu {
+  display: flex;
+  height: 80px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+header .inner .main__menu .item .item__name {
+  padding: 10px 14px 34px 14px;
+  font-size: 18px;
+  font-family: "Happiness-Sans-Title";
+  color: #2F3438;
+
+}
+header .inner .main__menu .item:first-child .item__name{
+  color: #35c5f0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 호버시 사이드바 */
+header .main__menu .item .item__contents {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 80px;
+  background-color: #fff;
+ 
+  font-size: 16px;
+  border-bottom: 1px solid #eaedef;
+}
+
+/* 메인메뉴에 마우스 올렸을때 display:none이 display: block이되면서 나타나는 hover*/
+header .main__menu .item:hover .item__name {
+  color: #35c5f0;
+  cursor: pointer;
+}
+
+header .main__menu .item .item__contents .content__menu > ul {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    height: 50px;
+}
+header .main__menu .item .item__contents .content__menu > ul > li {
+  max-width: 100px;
+  text-align: center;
+  margin: 0 12px;
 }
