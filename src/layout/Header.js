@@ -70,6 +70,26 @@ const Header = () => {
               </div>
             </li>
           </ul>
+          <div className="search">
+            <input type="text" placeholder="통합검색"/>
+            <span class="material-icons">search</span>
+          </div>
+          <div className="sub__menu">
+            <div className='cart'>
+              <div class="material-icons">shopping_cart</div>
+            </div>
+            <ul>
+              <li>로그인</li>
+              <li>회원가입</li>
+              <li>고객센터</li>
+            </ul>
+            <div className='write_btn'>
+              <button className='btn'>
+                <span className='write_text'>글쓰기</span>
+                <div class="material-icons">keyboard_arrow_down</div>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </header>

@@ -24,11 +24,12 @@ a {
 
 
 header{
+  z-index: 1101;
+  position: fixed;
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #eaedef;
-  z-index: 10;
-  position: fixed;
+  
 }
 header>.inner {
   height: 80px;
@@ -38,25 +39,27 @@ header>.inner {
   height: 80px;
   display: flex;
   box-sizing: border-box;
+  padding: 10px 0;
 }
+
 .inner .main .main__logo{
-  margin-right: 35px;
-  margin-top: 10px;
+ padding-right: 45px;
 }
 
 .inner .main .main__menu {
   display: flex;
-  height: 80px;
+  height: 100%;
   align-items: center;
-  padding-top: 10px;
+  align-content: center;
+  width: 355px;
 }
 
 header .inner .main__menu .item .item__name {
-  padding: 10px 14px 34px 14px;
+  padding-right: 25px;
   font-size: 18px;
   font-family: "Happiness-Sans-Title";
   color: #2F3438;
-
+  height: 10px;
 }
 header .inner .main__menu .item:first-child .item__name{
   color: #35c5f0;
@@ -65,16 +68,24 @@ header .inner .main__menu .item:first-child .item__name{
 /* 호버시 사이드바 */
 header .main__menu .item .item__contents {
   position: fixed;
+  z-index: 1;
+  display: none;
   width: 100%;
   left: 0;
-  top: 80px;
+  top: 30px;
   background-color: #fff;
- 
   font-size: 16px;
   border-bottom: 1px solid #eaedef;
+  transition: top 1s;
 }
 
 /* 메인메뉴에 마우스 올렸을때 display:none이 display: block이되면서 나타나는 hover*/
+header .main__menu .item:hover .item__contents {
+  top: 81px;
+  display: block;
+  transition: top 1s;
+}
+
 header .main__menu .item:hover .item__name {
   color: #35c5f0;
   cursor: pointer;
@@ -90,4 +101,89 @@ header .main__menu .item .item__contents .content__menu > ul > li {
   max-width: 100px;
   text-align: center;
   margin: 0 12px;
+}
+
+/* 검색 */
+header .main .search {
+  height: 40px;
+  position: relative;
+  display: inline-flex;
+  margin: auto 0;
+}
+header .main .search input {
+  padding: 20px 40px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
+  color: #c4cbce;
+  font-size: 16px;
+}
+header .main .search .material-icons {
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 5px;
+  margin: auto;
+  transition: 0.4s;
+}
+/* 카트, 로그인, 서브메뉴 */
+header .main .sub__menu {
+  height: 40px;
+  position: relative;
+  display: inline-flex;
+  margin: auto;
+  cursor: pointer;
+}
+
+header .main .sub__menu .cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .main .sub__menu>ul{
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  position: relative;
+  margin-left: 20px;
+}
+
+header .main .sub__menu>ul>li{
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+/* 수정할것 */
+header .main .sub__menu>ul>li::before {
+  content: "";
+  width: 1px;
+  height: 17px;
+  background-color: #e5e5e5;
+  position: absolute;
+  margin: 0 -10px;
+}
+
+header .main .sub__menu>ul>li:first-child:before {
+  display: none;
+}
+
+header .main .sub__menu .write_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .main .sub__menu .write_btn .btn{
+ background-color: #35c5f0;
+ border-radius: 4px;
+ border: none;
+ display: flex;
+ padding: 8px 15px;
+}
+header .main .sub__menu .write_btn .btn>.material-icons,
+header .main .sub__menu .write_btn .btn .write_text{
+  color: #fff;
 }
